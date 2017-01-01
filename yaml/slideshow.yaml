@@ -1,0 +1,54 @@
+dynamic_occupancy_detector_1:
+    occupancy_publish_topic: "occupancy_detection_video"
+    minimum_number_of_sensor_points_inside_roi: 5
+    filtered_pointcloud_publish_topic: 'filtered_pointcloud_video'
+    crop_box:
+        box_min_x: -0.1469
+        box_min_y: 0.0836
+        box_min_z: 0.009
+        box_max_x: 0.0131
+        box_max_y: 0.1736
+        box_max_z: 0.03
+        box_translation_x: 0.0
+        box_translation_y: 0.0
+        box_translation_z: 0.0
+        box_rotation_roll: 0.0
+        box_rotation_pitch: 0.0
+        box_rotation_yaw: 0.0
+        invert_selection: false
+dynamic_occupancy_detector_2:
+    occupancy_publish_topic: "occupancy_detection_text"
+    minimum_number_of_sensor_points_inside_roi: 5
+    filtered_pointcloud_publish_topic: 'filtered_pointcloud_text'
+    crop_box:
+        box_min_x: -0.149
+        box_min_y: 0.1855
+        box_min_z: 0.009
+        box_max_x: 0.015
+        box_max_y: 0.2805
+        box_max_z: 0.03
+        box_translation_x: 0.0
+        box_translation_y: 0.0
+        box_translation_z: 0.0
+        box_rotation_roll: 0.0
+        box_rotation_pitch: 0.0
+        box_rotation_yaw: 0.0
+        invert_selection: false
+dynamic_occupancy_detector_3:
+    occupancy_publish_topic: "occupancy_detection_chessboard"
+    minimum_number_of_sensor_points_inside_roi: 5
+    filtered_pointcloud_publish_topic: 'filtered_pointcloud_chessboard'
+    crop_box:
+        box_min_x: 0
+        box_min_y: 0
+        box_min_z: 0.009
+        box_max_x: 0.30735
+        box_max_y: 0.2049
+        box_max_z: 0.015
+        box_translation_x: 0.0
+        box_translation_y: 0.0
+        box_translation_z: 0.0
+        box_rotation_roll: 0.0
+        box_rotation_pitch: 0.0
+        box_rotation_yaw: 0.0
+        invert_selection: false

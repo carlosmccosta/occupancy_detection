@@ -19,10 +19,12 @@ StaticOccupancyDetection::~StaticOccupancyDetection() {}
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <member-functions>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 bool StaticOccupancyDetection::loadConfigurationFromParameterServer(ros::NodeHandlePtr& _node_handle, ros::NodeHandlePtr& _private_node_handle, const std::string& _configuration_namespace) {
+	DynamicOccupancyDetection::loadConfigurationFromParameterServer(_node_handle, _private_node_handle, _configuration_namespace);
 	return false;
 }
 
-bool StaticOccupancyDetection::processSensorData(const pcl::PointCloud<pcl::PointXYZRGB>& _sensor_data) {
+bool StaticOccupancyDetection::detectOccupancy(const pcl::PointCloud<pcl::PointXYZRGB>::Ptr& _sensor_data) {
+	DynamicOccupancyDetection::detectOccupancy(_sensor_data);
 	return false;
 }
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </member-functions>  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -32,3 +34,4 @@ bool StaticOccupancyDetection::processSensorData(const pcl::PointCloud<pcl::Poin
 // =============================================================================   </protected-section>  =======================================================================
 
 } /* namespace occupancy_detection */
+

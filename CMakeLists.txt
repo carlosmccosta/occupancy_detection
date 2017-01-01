@@ -7,6 +7,8 @@ project(occupancy_detection)
 #######################################################################################################################
 
 set(${PROJECT_NAME}_CATKIN_COMPONENTS
+    cmake_modules
+    geometry_msgs
     pcl_conversions
     pcl_ros
     rosconsole
@@ -21,6 +23,7 @@ set(${PROJECT_NAME}_CATKIN_COMPONENTS
 
 find_package(catkin REQUIRED COMPONENTS ${${PROJECT_NAME}_CATKIN_COMPONENTS})
 find_package(Boost REQUIRED)
+find_package(Eigen REQUIRED)
 find_package(PCL REQUIRED)
 
 
@@ -38,6 +41,7 @@ catkin_package(
         ${${PROJECT_NAME}_CATKIN_COMPONENTS}
     DEPENDS
         Boost
+        Eigen
         PCL
 )
 
@@ -54,6 +58,7 @@ catkin_package(
 include_directories(
     include
     ${Boost_INCLUDE_DIRS}
+    ${Eigen_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}
     ${catkin_INCLUDE_DIRS}
 )
@@ -67,6 +72,7 @@ add_definitions(${PCL_DEFINITIONS})
 #==============================================================================
 
 add_library(occupancy_detection
+    src/filters.cpp
     src/static_occupancy_detection.cpp
     src/dynamic_occupancy_detection.cpp
     src/occupancy_detection.cpp
