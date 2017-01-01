@@ -9,6 +9,7 @@
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #include <occupancy_detection/dynamic_occupancy_detection.h>
+#include <ros/time.h>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 namespace occupancy_detection {
@@ -41,7 +42,12 @@ class StaticOccupancyDetection : public DynamicOccupancyDetection {
 	// ========================================================================   </public-section>  ===========================================================================
 
 	// ========================================================================   <protected-section>   ========================================================================
-	//protected:
+	protected:
+		ros::Duration minimum_detection_time_;
+		bool keep_detecting_when_objects_remain_in_roi_;
+		ros::Time last_detection_time_;
+		bool detection_successful_in_last_sensor_data_;
+		bool detection_failed_after_last_accepted_detection_;
 	// ========================================================================   </protected-section>  ========================================================================
 };
 

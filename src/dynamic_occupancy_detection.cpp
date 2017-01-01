@@ -85,7 +85,6 @@ bool DynamicOccupancyDetection::detectOccupancy(const pcl::PointCloud<pcl::Point
 			occupancy_detected_.point.z = pointcloud_centroid(2);
 			return true;
 		}
-
 	}
 
 	return false;
