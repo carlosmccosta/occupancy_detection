@@ -1,6 +1,6 @@
 dynamic_occupancy_detector_0:
     occupancy_publish_topic: "occupancy_detection_workspace"
-    minimum_number_of_sensor_points_inside_roi: 5
+    minimum_number_of_sensor_points_inside_roi: 13
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_workspace'
     crop_box:
         box_min_x: -0.17075
@@ -8,7 +8,7 @@ dynamic_occupancy_detector_0:
         box_min_z: 0.002
         box_max_x: 0.3415
         box_max_y: 0.30735
-        box_max_z: 0.01
+        box_max_z: 0.008
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -18,9 +18,9 @@ dynamic_occupancy_detector_0:
         invert_selection: false
 static_occupancy_detector_0:
     occupancy_publish_topic: "occupancy_detection_first_button"
-    minimum_number_of_sensor_points_inside_roi: 5
-    minimum_detection_time: 0.5
-    keep_detecting_when_objects_remain_in_roi: true
+    minimum_number_of_sensor_points_inside_roi: 13
+    minimum_detection_time: 0.25
+    keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_first_button'
     crop_box:
         box_min_x: -0.1525
@@ -28,7 +28,7 @@ static_occupancy_detector_0:
         box_min_z: 0.002
         box_max_x: -0.1275
         box_max_y: 0.091
-        box_max_z: 0.01
+        box_max_z: 0.008
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -38,9 +38,9 @@ static_occupancy_detector_0:
         invert_selection: false
 static_occupancy_detector_1:
     occupancy_publish_topic: "occupancy_detection_previous_button"
-    minimum_number_of_sensor_points_inside_roi: 5
-    minimum_detection_time: 0.5
-    keep_detecting_when_objects_remain_in_roi: true
+    minimum_number_of_sensor_points_inside_roi: 13
+    minimum_detection_time: 0.25
+    keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_previous_button'
     crop_box:
         box_min_x: -0.1255
@@ -48,7 +48,7 @@ static_occupancy_detector_1:
         box_min_z: 0.002
         box_max_x: -0.1005
         box_max_y: 0.091
-        box_max_z: 0.01
+        box_max_z: 0.008
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -58,9 +58,9 @@ static_occupancy_detector_1:
         invert_selection: false
 static_occupancy_detector_2:
     occupancy_publish_topic: "occupancy_detection_next_button"
-    minimum_number_of_sensor_points_inside_roi: 5
-    minimum_detection_time: 0.5
-    keep_detecting_when_objects_remain_in_roi: true
+    minimum_number_of_sensor_points_inside_roi: 13
+    minimum_detection_time: 0.25
+    keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_next_button'
     crop_box:
         box_min_x: -0.0325
@@ -68,7 +68,7 @@ static_occupancy_detector_2:
         box_min_z: 0.002
         box_max_x: -0.0075
         box_max_y: 0.091
-        box_max_z: 0.01
+        box_max_z: 0.008
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -78,9 +78,9 @@ static_occupancy_detector_2:
         invert_selection: false
 static_occupancy_detector_3:
     occupancy_publish_topic: "occupancy_detection_last_button"
-    minimum_number_of_sensor_points_inside_roi: 5
-    minimum_detection_time: 0.5
-    keep_detecting_when_objects_remain_in_roi: true
+    minimum_number_of_sensor_points_inside_roi: 13
+    minimum_detection_time: 0.25
+    keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_last_button'
     crop_box:
         box_min_x: -0.0055
@@ -88,7 +88,7 @@ static_occupancy_detector_3:
         box_min_z: 0.002
         box_max_x: 0.0195
         box_max_y: 0.091
-        box_max_z: 0.01
+        box_max_z: 0.008
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -97,18 +97,18 @@ static_occupancy_detector_3:
         box_rotation_yaw: 0.0
         invert_selection: false
 static_occupancy_detector_4:
-    occupancy_publish_topic: "occupancy_detection_video"
-    minimum_number_of_sensor_points_inside_roi: 5
+    occupancy_publish_topic: "occupancy_detection_video_paused"
+    minimum_number_of_sensor_points_inside_roi: 13
     minimum_detection_time: 0.5
     keep_detecting_when_objects_remain_in_roi: false
-    filtered_pointcloud_publish_topic: 'filtered_pointcloud_video'
+    filtered_pointcloud_publish_topic: 'filtered_pointcloud_video_paused'
     crop_box:
         box_min_x: -0.1469
-        box_min_y: 0.1235
+        box_min_y: 0.1035
         box_min_z: 0.002
         box_max_x: 0.0131
-        box_max_y: 0.1885
-        box_max_z: 0.01
+        box_max_y: 0.1685
+        box_max_z: 0.008
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -116,3 +116,22 @@ static_occupancy_detector_4:
         box_rotation_pitch: 0.0
         box_rotation_yaw: 0.0
         invert_selection: false
+dynamic_occupancy_detector_1:
+    occupancy_publish_topic: "occupancy_detection_video_seek"
+    minimum_number_of_sensor_points_inside_roi: 13
+    filtered_pointcloud_publish_topic: 'filtered_pointcloud_video_seek'
+    crop_box:
+        box_min_x: -0.1469
+        box_min_y: 0.1685
+        box_min_z: 0.002
+        box_max_x: 0.0131
+        box_max_y: 0.1885
+        box_max_z: 0.008
+        box_translation_x: 0.0
+        box_translation_y: 0.0
+        box_translation_z: 0.0
+        box_rotation_roll: 0.0
+        box_rotation_pitch: 0.0
+        box_rotation_yaw: 0.0
+        invert_selection: false
+
