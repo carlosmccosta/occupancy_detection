@@ -8,7 +8,7 @@ dynamic_occupancy_detector_0:
         box_min_z: 0.002
         box_max_x: 0.3415
         box_max_y: 0.30735
-        box_max_z: 0.008
+        box_max_z: 0.015
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -28,7 +28,7 @@ static_occupancy_detector_0:
         box_min_z: 0.002
         box_max_x: -0.1275
         box_max_y: 0.091
-        box_max_z: 0.008
+        box_max_z: 0.015
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -48,7 +48,7 @@ static_occupancy_detector_1:
         box_min_z: 0.002
         box_max_x: -0.1005
         box_max_y: 0.091
-        box_max_z: 0.008
+        box_max_z: 0.015
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -68,7 +68,7 @@ static_occupancy_detector_2:
         box_min_z: 0.002
         box_max_x: -0.0075
         box_max_y: 0.091
-        box_max_z: 0.008
+        box_max_z: 0.015
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -88,7 +88,7 @@ static_occupancy_detector_3:
         box_min_z: 0.002
         box_max_x: 0.0195
         box_max_y: 0.091
-        box_max_z: 0.008
+        box_max_z: 0.015
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -108,7 +108,7 @@ static_occupancy_detector_4:
         box_min_z: 0.002
         box_max_x: 0.0131
         box_max_y: 0.1685
-        box_max_z: 0.008
+        box_max_z: 0.015
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -126,7 +126,7 @@ dynamic_occupancy_detector_1:
         box_min_z: 0.002
         box_max_x: 0.0131
         box_max_y: 0.1885
-        box_max_z: 0.008
+        box_max_z: 0.015
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
