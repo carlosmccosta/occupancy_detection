@@ -11,10 +11,10 @@ dynamic_occupancy_detector_workspace:
     crop_box:
         box_min_x: -0.17075
         box_min_y: -0.03415
-        box_min_z: 0.01
+        box_min_z: 0.02
         box_max_x: 0.3415
         box_max_y: 0.30735
-        box_max_z: 0.02
+        box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -37,10 +37,10 @@ static_occupancy_detector_first_button:
     crop_box:
         box_min_x: -0.1525
         box_min_y: 0.066
-        box_min_z: 0.01
+        box_min_z: 0.02
         box_max_x: -0.1275
         box_max_y: 0.091
-        box_max_z: 0.02
+        box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -63,10 +63,10 @@ static_occupancy_detector_previous_button:
     crop_box:
         box_min_x: -0.1255
         box_min_y: 0.066
-        box_min_z: 0.01
+        box_min_z: 0.02
         box_max_x: -0.1005
         box_max_y: 0.091
-        box_max_z: 0.02
+        box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -89,10 +89,10 @@ static_occupancy_detector_next_button:
     crop_box:
         box_min_x: -0.0325
         box_min_y: 0.066
-        box_min_z: 0.01
+        box_min_z: 0.02
         box_max_x: -0.0075
         box_max_y: 0.091
-        box_max_z: 0.02
+        box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -115,10 +115,10 @@ static_occupancy_detector_last_button:
     crop_box:
         box_min_x: -0.0055
         box_min_y: 0.066
-        box_min_z: 0.01
+        box_min_z: 0.02
         box_max_x: 0.0195
         box_max_y: 0.091
-        box_max_z: 0.02
+        box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -135,16 +135,16 @@ static_occupancy_detector_video_paused:
     marker:
         color:
             r: 0.0
-            g: 1.0
-            b: 0.0
+            g: 0.0
+            b: 1.0
             a: 0.5
     crop_box:
-        box_min_x: -0.1469
-        box_min_y: 0.1035
-        box_min_z: 0.01
-        box_max_x: 0.0131
-        box_max_y: 0.1685
-        box_max_z: 0.02
+        box_min_x: -0.098
+        box_min_y: 0.061
+        box_min_z: 0.02
+        box_max_x: -0.035
+        box_max_y: 0.096
+        box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
@@ -158,17 +158,17 @@ dynamic_occupancy_detector_video_seek:
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_video_seek'
     marker:
         color:
-            r: 0.0
-            g: 0.0
-            b: 1.0
+            r: 1.0
+            g: 1.0
+            b: 0.0
             a: 0.5
     crop_box:
-        box_min_x: -0.1469
-        box_min_y: 0.1685
+        box_min_x: -0.16
+        box_min_y: 0.108
         box_min_z: 0.01
-        box_max_x: 0.0131
-        box_max_y: 0.1885
-        box_max_z: 0.02
+        box_max_x: -0.12
+        box_max_y: 0.17
+        box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
         box_translation_z: 0.0
