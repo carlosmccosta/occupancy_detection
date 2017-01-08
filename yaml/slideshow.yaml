@@ -2,6 +2,12 @@ dynamic_occupancy_detector_workspace:
     occupancy_publish_topic: "occupancy_detection_workspace"
     minimum_number_of_sensor_points_inside_roi: 7
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_workspace'
+    marker:
+        color:
+            r: 1.0
+            g: 0.0
+            b: 0.0
+            a: 0.5
     crop_box:
         box_min_x: -0.17075
         box_min_y: -0.03415
@@ -22,6 +28,12 @@ static_occupancy_detector_first_button:
     minimum_detection_time: 0.25
     keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_first_button'
+    marker:
+        color:
+            r: 0.0
+            g: 1.0
+            b: 0.0
+            a: 0.5
     crop_box:
         box_min_x: -0.1525
         box_min_y: 0.066
@@ -42,6 +54,12 @@ static_occupancy_detector_previous_button:
     minimum_detection_time: 0.25
     keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_previous_button'
+    marker:
+        color:
+            r: 0.0
+            g: 1.0
+            b: 0.0
+            a: 0.5
     crop_box:
         box_min_x: -0.1255
         box_min_y: 0.066
@@ -62,6 +80,12 @@ static_occupancy_detector_next_button:
     minimum_detection_time: 0.25
     keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_next_button'
+    marker:
+        color:
+            r: 0.0
+            g: 1.0
+            b: 0.0
+            a: 0.5
     crop_box:
         box_min_x: -0.0325
         box_min_y: 0.066
@@ -82,6 +106,12 @@ static_occupancy_detector_last_button:
     minimum_detection_time: 0.25
     keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_last_button'
+    marker:
+        color:
+            r: 0.0
+            g: 1.0
+            b: 0.0
+            a: 0.5
     crop_box:
         box_min_x: -0.0055
         box_min_y: 0.066
@@ -102,6 +132,12 @@ static_occupancy_detector_video_paused:
     minimum_detection_time: 0.5
     keep_detecting_when_objects_remain_in_roi: false
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_video_paused'
+    marker:
+        color:
+            r: 0.0
+            g: 1.0
+            b: 0.0
+            a: 0.5
     crop_box:
         box_min_x: -0.1469
         box_min_y: 0.1035
@@ -120,6 +156,12 @@ dynamic_occupancy_detector_video_seek:
     occupancy_publish_topic: "occupancy_detection_video_seek"
     minimum_number_of_sensor_points_inside_roi: 7
     filtered_pointcloud_publish_topic: 'filtered_pointcloud_video_seek'
+    marker:
+        color:
+            r: 0.0
+            g: 0.0
+            b: 1.0
+            a: 0.5
     crop_box:
         box_min_x: -0.1469
         box_min_y: 0.1685

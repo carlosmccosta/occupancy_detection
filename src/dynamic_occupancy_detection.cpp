@@ -50,8 +50,12 @@ bool DynamicOccupancyDetection::loadConfigurationFromParameterServer(ros::NodeHa
 		filters::loadBoxMarkerFromCropBox(filter, marker);
 		marker->header.frame_id = marker_frame_id;
 		marker->header.stamp = ros::Time::now();
-		marker->ns = _configuration_namespace;
-		marker->id = 0;
+		_private_node_handle->param(_configuration_namespace + "marker/ns", marker->ns, _configuration_namespace);
+		_private_node_handle->param(_configuration_namespace + "marker/id", marker->id, 0);
+		_private_node_handle->param(_configuration_namespace + "marker/color/r", marker->color.r, 0.0f);
+		_private_node_handle->param(_configuration_namespace + "marker/color/g", marker->color.g, 1.0f);
+		_private_node_handle->param(_configuration_namespace + "marker/color/b", marker->color.b, 0.0f);
+		_private_node_handle->param(_configuration_namespace + "marker/color/a", marker->color.a, 0.5f);
 		marker_publisher_.publish(marker);
 	}
 
