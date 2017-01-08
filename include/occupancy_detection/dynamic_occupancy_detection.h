@@ -23,6 +23,7 @@
 #include <ros/ros.h>
 #include <geometry_msgs/PointStamped.h>
 #include <sensor_msgs/PointCloud2.h>
+#include <visualization_msgs/Marker.h>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 namespace occupancy_detection {
@@ -63,6 +64,7 @@ class DynamicOccupancyDetection : public PerceptionInterface {
 		std::vector<pcl::Filter<pcl::PointXYZRGB>::Ptr> filters_;
 		ros::Publisher occupancy_publisher_;
 		ros::Publisher filtered_cloud_publisher_;
+		ros::Publisher marker_publisher_;
 		geometry_msgs::PointStamped occupancy_detected_;
 		int minimum_number_of_sensor_points_inside_roi_;
 	// ========================================================================   </protected-section>  ========================================================================

@@ -38,6 +38,23 @@ bool DynamicOccupancyDetection::loadConfigurationFromParameterServer(ros::NodeHa
 	typename pcl::CropBox<pcl::PointXYZRGB>::Ptr filter = boost::static_pointer_cast< typename pcl::CropBox<pcl::PointXYZRGB> >(filter_base);
 	filters::loadCropBoxFilterFromParameterServer(_node_handle, _private_node_handle, _configuration_namespace + "crop_box/", filter);
 	filters_.push_back(filter_base);
+
+	std::string marker_topic;
+	_private_node_handle->param(_configuration_namespace + "marker_publish_topic", marker_topic, std::string(_configuration_namespace + "roi_marker"));
+
+	std::string marker_frame_id;
+	_private_node_handle->param(_configuration_namespace + "marker_frame_id", marker_frame_id, std::string("map"));
+	if (!marker_topic.empty()) {
+		marker_publisher_ = _node_handle->advertise<visualization_msgs::Marker>(marker_topic, 1, true);
+		visualization_msgs::MarkerPtr marker(new visualization_msgs::Marker());
+		filters::loadBoxMarkerFromCropBox(filter, marker);
+		marker->header.frame_id = marker_frame_id;
+		marker->header.stamp = ros::Time::now();
+		marker->ns = _configuration_namespace;
+		marker->id = 0;
+		marker_publisher_.publish(marker);
+	}
+
 	return true;
 }
 

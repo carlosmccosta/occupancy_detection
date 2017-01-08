@@ -18,6 +18,7 @@ set(${PROJECT_NAME}_CATKIN_COMPONENTS
     std_msgs
     tf2
     tf2_ros
+    visualization_msgs
     xmlrpcpp
 )
 

@@ -15,7 +15,7 @@ namespace occupancy_detection {
 namespace filters {
 
 bool loadCropBoxFilterFromParameterServer(ros::NodeHandlePtr& _node_handle, ros::NodeHandlePtr& _private_node_handle,
-		const std::string& _configuration_namespace, pcl::CropBox<pcl::PointXYZRGB>::Ptr _filter) {
+		const std::string& _configuration_namespace, pcl::CropBox<pcl::PointXYZRGB>::Ptr& _filter) {
 
 	double box_min_x, box_min_y, box_min_z;
 	_private_node_handle->param(_configuration_namespace + "box_min_x", box_min_x, -10.0);
@@ -46,6 +46,32 @@ bool loadCropBoxFilterFromParameterServer(ros::NodeHandlePtr& _node_handle, ros:
 	_filter->setNegative(invert_selection);
 
 	return true;
+}
+
+bool loadBoxMarkerFromCropBox(pcl::CropBox<pcl::PointXYZRGB>::Ptr& _filter, visualization_msgs::MarkerPtr& _marker) {
+	_marker->type = visualization_msgs::Marker::CUBE;
+	_marker->action = visualization_msgs::Marker::ADD;
+	Eigen::Vector4f min = _filter->getMin();
+	Eigen::Vector4f max = _filter->getMax();
+	Eigen::Vector3f translation = _filter->getTranslation();
+	double dx = max(0) - min(0);
+	double dy = max(1) - min(1);
+	double dz = max(2) - min(2);
+	_marker->pose.position.x = min(0) + dx / 2.0 + translation(0);
+	_marker->pose.position.y = min(1) + dy / 2.0 + translation(1);
+	_marker->pose.position.z = min(2) + dz / 2.0 + translation(2);
+	_marker->pose.orientation.x = 0.0;
+	_marker->pose.orientation.y = 0.0;
+	_marker->pose.orientation.z = 0.0;
+	_marker->pose.orientation.w = 1.0;
+	_marker->scale.x = dx;
+	_marker->scale.y = dy;
+	_marker->scale.z = dz;
+	_marker->color.r = 0.0f;
+	_marker->color.g = 1.0f;
+	_marker->color.b = 0.0f;
+	_marker->color.a = 1.0;
+	_marker->lifetime = ros::Duration();
 }
 
 } /* namespace filters */
