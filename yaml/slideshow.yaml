@@ -164,10 +164,10 @@ dynamic_occupancy_detector_video_seek:
             a: 0.5
     crop_box:
         box_min_x: -0.16
-        box_min_y: 0.108
-        box_min_z: 0.01
+        box_min_y: 0.115
+        box_min_z: 0.02
         box_max_x: -0.12
-        box_max_y: 0.17
+        box_max_y: 0.18
         box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
