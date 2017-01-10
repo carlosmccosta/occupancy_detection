@@ -143,7 +143,7 @@ static_occupancy_detector_video_paused:
         box_min_y: 0.061
         box_min_z: 0.02
         box_max_x: -0.035
-        box_max_y: 0.096
+        box_max_y: 0.086
         box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
@@ -163,11 +163,11 @@ dynamic_occupancy_detector_video_seek:
             b: 0.0
             a: 0.5
     crop_box:
-        box_min_x: -0.16
-        box_min_y: 0.115
+        box_min_x: -0.165
+        box_min_y: 0.11
         box_min_z: 0.02
-        box_max_x: -0.12
-        box_max_y: 0.18
+        box_max_x: -0.135
+        box_max_y: 0.185
         box_max_z: 0.04
         box_translation_x: 0.0
         box_translation_y: 0.0
