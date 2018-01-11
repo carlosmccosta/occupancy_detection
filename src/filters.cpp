@@ -68,6 +68,8 @@ bool loadBoxMarkerFromCropBox(pcl::CropBox<pcl::PointXYZRGB>::Ptr& _filter, visu
 	_marker->scale.y = dy;
 	_marker->scale.z = dz;
 	_marker->lifetime = ros::Duration();
+
+	return true;
 }
 
 } /* namespace filters */
