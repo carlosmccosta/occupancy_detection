@@ -7,7 +7,6 @@ project(occupancy_detection)
 #######################################################################################################################
 
 set(${PROJECT_NAME}_CATKIN_COMPONENTS
-    cmake_modules
     geometry_msgs
     pcl_conversions
     pcl_ros
@@ -22,9 +21,10 @@ set(${PROJECT_NAME}_CATKIN_COMPONENTS
     xmlrpcpp
 )
 
+
 find_package(catkin REQUIRED COMPONENTS ${${PROJECT_NAME}_CATKIN_COMPONENTS})
+find_package(Eigen3 REQUIRED)
 find_package(Boost REQUIRED)
-find_package(Eigen REQUIRED)
 find_package(PCL REQUIRED)
 
 
@@ -42,7 +42,7 @@ catkin_package(
         ${${PROJECT_NAME}_CATKIN_COMPONENTS}
     DEPENDS
         Boost
-        Eigen
+        EIGEN3
         PCL
 )
 
@@ -59,13 +59,10 @@ catkin_package(
 include_directories(
     include
     ${Boost_INCLUDE_DIRS}
-    ${Eigen_INCLUDE_DIRS}
+    ${EIGEN3_INCLUDE_DIR}
     ${PCL_INCLUDE_DIRS}
     ${catkin_INCLUDE_DIRS}
 )
-
-link_directories(${PCL_LIBRARY_DIRS})
-add_definitions(${PCL_DEFINITIONS})
 
 
 #==============================================================================
@@ -89,13 +86,26 @@ add_executable(occupancy_detection_node
 )
 
 
+
+#==================
+# dependencies
+#==================
+
+add_dependencies(occupancy_detection
+    ${catkin_EXPORTED_TARGETS}
+)
+
+add_dependencies(occupancy_detection_node
+    ${catkin_EXPORTED_TARGETS}
+)
+
+
 #==============================================================================
 # library link
 #==============================================================================
 
 target_link_libraries(occupancy_detection
-#    ${Boost_LIBRARIES}
-#    ${PCL_LIBRARIES}
+    ${PCL_LIBRARIES}
     ${catkin_LIBRARIES}
 )
 
@@ -106,8 +116,6 @@ target_link_libraries(occupancy_detection
 
 target_link_libraries(occupancy_detection_node
     occupancy_detection
-#    ${Boost_LIBRARIES}
-#    ${PCL_LIBRARIES}
+    ${PCL_LIBRARIES}
     ${catkin_LIBRARIES}
 )
-
