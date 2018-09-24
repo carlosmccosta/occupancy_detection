@@ -8,8 +8,20 @@
  */
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-#include <occupancy_detection/dynamic_occupancy_detection.h>
+// std includes
+#include <string>
+
+// ROS includes
+#include <ros/ros.h>
 #include <ros/time.h>
+#include <ros/duration.h>
+
+// PCL includes
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+
+// project includes
+#include <occupancy_detection/dynamic_occupancy_detection.h>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 namespace occupancy_detection {

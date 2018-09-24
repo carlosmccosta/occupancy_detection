@@ -9,13 +9,22 @@
  
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// std includes
 #include <string>
 #include <vector>
-#include <Eigen/Core>
-#include <pcl/filters/filter.h>
-#include <pcl_conversions/pcl_conversions.h>
+
+// ROS includes
 #include <geometry_msgs/TransformStamped.h>
 #include <sensor_msgs/PointCloud2.h>
+
+// PCL includes
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+#include <pcl/filters/filter.h>
+#include <pcl_conversions/pcl_conversions.h>
+
+// external libs includes
+#include <Eigen/Core>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -34,7 +43,7 @@ template <typename Scalar>
 Eigen::Transform<Scalar, 3, Eigen::Affine> transformMsgToEigenTransform(const geometry_msgs::TransformStamped& tf) {
 	Eigen::Translation<Scalar, 3> translation(tf.transform.translation.x, tf.transform.translation.y, tf.transform.translation.z);
 	Eigen::Quaternion<Scalar> rotation(tf.transform.rotation.w, tf.transform.rotation.x, tf.transform.rotation.y, tf.transform.rotation.z);
-	return Eigen::Transform<Scalar, 3, Eigen::Affine>(translation * rotation);
+	return Eigen::Transform<Scalar, 3, Eigen::Affine>(translation * rotation.toRotationMatrix());
 }
 
 

@@ -8,20 +8,36 @@
  */
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-#include <occupancy_detection/configurable_interface.h>
-#include <occupancy_detection/perception_interface.h>
-#include <occupancy_detection/static_occupancy_detection.h>
-#include <occupancy_detection/dynamic_occupancy_detection.h>
-#include <occupancy_detection/msg_convertions.h>
+// std includes
 #include <algorithm>
 #include <string>
+#include <sstream>
 #include <vector>
-#include <Eigen/Core>
-#include <pcl/common/transforms.h>
+
+// ROS includes
 #include <ros/ros.h>
+#include <ros/duration.h>
+#include <ros/time.h>
+#include <geometry_msgs/TransformStamped.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <tf2_ros/buffer.h>
 #include <tf2_ros/transform_listener.h>
+#include <xmlrpcpp/XmlRpcValue.h>
+
+// PCL includes
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+#include <pcl/common/transforms.h>
+
+// external libs includes
+#include <Eigen/Core>
+
+// project includes
+#include <occupancy_detection/configurable_interface.h>
+#include <occupancy_detection/perception_interface.h>
+#include <occupancy_detection/dynamic_occupancy_detection.h>
+#include <occupancy_detection/static_occupancy_detection.h>
+#include <occupancy_detection/msg_conversions.h>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -63,7 +79,7 @@ class OccupancyDetection : public ConfigurableInterface {
 		std::string topics_sensor_pointcloud_;
 		std::string map_frame_id_;
 		std::vector<ros::Subscriber> pointcloud_subscribers_;
-		std::vector <PerceptionInterface::Ptr> occupancy_detectors_;
+		std::vector<PerceptionInterface::Ptr> occupancy_detectors_;
 		tf2_ros::Buffer tf2_buffer_;
 		tf2_ros::TransformListener tf2_transform_listener_;
 	// ========================================================================   </protected-section>  ========================================================================

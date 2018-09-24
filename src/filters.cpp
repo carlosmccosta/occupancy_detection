@@ -41,6 +41,9 @@ bool loadCropBoxFilterFromParameterServer(ros::NodeHandlePtr& _node_handle, ros:
 	_private_node_handle->param(_configuration_namespace + "box_rotation_yaw", box_rotation_yaw, 0.0);
 	_filter->setRotation(Eigen::Vector3f(box_rotation_roll, box_rotation_pitch, box_rotation_yaw));
 
+	Eigen::Affine3f transform = Eigen::Affine3f::Identity();
+	_filter->setTransform(transform);
+
 	bool invert_selection;
 	_private_node_handle->param(_configuration_namespace + "invert_selection", invert_selection, false);
 	_filter->setNegative(invert_selection);

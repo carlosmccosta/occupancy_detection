@@ -9,12 +9,22 @@
  
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// std includes
 #include <string>
-#include <boost/smart_ptr/shared_ptr.hpp>
+
+// ROS includes
+#include <ros/ros.h>
+#include <ros/duration.h>
+#include <ros/time.h>
+#include <visualization_msgs/Marker.h>
+
+// PCL includes
 #include <pcl/point_types.h>
 #include <pcl/filters/crop_box.h>
-#include <ros/ros.h>
-#include <visualization_msgs/Marker.h>
+
+// external libs includes
+#include <boost/smart_ptr/shared_ptr.hpp>
+#include <Eigen/Core>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 namespace occupancy_detection {

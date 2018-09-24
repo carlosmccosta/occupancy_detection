@@ -8,22 +8,32 @@
  */
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-#include <occupancy_detection/configurable_interface.h>
-#include <occupancy_detection/perception_interface.h>
-#include <occupancy_detection/filters.h>
+// std includes
 #include <vector>
 #include <string>
-#include <boost/smart_ptr/shared_ptr.hpp>
-#include <pcl/point_cloud.h>
+
+// ROS includes
+#include <ros/ros.h>
+#include <ros/time.h>
+#include <geometry_msgs/PointStamped.h>
+#include <sensor_msgs/PointCloud2.h>
+#include <visualization_msgs/Marker.h>
+
+// PCL includes
 #include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
 #include <pcl/common/centroid.h>
 #include <pcl/filters/filter.h>
 #include <pcl/filters/crop_box.h>
 #include <pcl_conversions/pcl_conversions.h>
-#include <ros/ros.h>
-#include <geometry_msgs/PointStamped.h>
-#include <sensor_msgs/PointCloud2.h>
-#include <visualization_msgs/Marker.h>
+
+// external libs includes
+#include <boost/smart_ptr/shared_ptr.hpp>
+
+// project includes
+#include <occupancy_detection/configurable_interface.h>
+#include <occupancy_detection/perception_interface.h>
+#include <occupancy_detection/filters.h>
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 namespace occupancy_detection {

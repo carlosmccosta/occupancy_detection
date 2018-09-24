@@ -34,10 +34,9 @@ bool DynamicOccupancyDetection::loadConfigurationFromParameterServer(ros::NodeHa
 	_private_node_handle->param(_configuration_namespace + "minimum_number_of_sensor_points_inside_roi", minimum_number_of_sensor_points_inside_roi_, 5);
 
 	filters_.clear();
-	typename pcl::Filter<pcl::PointXYZRGB>::Ptr filter_base(new pcl::CropBox<pcl::PointXYZRGB>());
-	typename pcl::CropBox<pcl::PointXYZRGB>::Ptr filter = boost::static_pointer_cast< typename pcl::CropBox<pcl::PointXYZRGB> >(filter_base);
+	typename pcl::CropBox<pcl::PointXYZRGB>::Ptr filter(new pcl::CropBox<pcl::PointXYZRGB>());
 	filters::loadCropBoxFilterFromParameterServer(_node_handle, _private_node_handle, _configuration_namespace + "crop_box/", filter);
-	filters_.push_back(filter_base);
+	filters_.push_back(filter);
 
 	std::string marker_topic;
 	_private_node_handle->param(_configuration_namespace + "marker_publish_topic", marker_topic, std::string(_configuration_namespace + "roi_marker"));
